@@ -10,4 +10,30 @@ var UniversityLibrarian = /** @class */ (function () {
     return UniversityLibrarian;
 }());
 exports.UniversityLibrarian = UniversityLibrarian;
+var ReferenceItem = /** @class */ (function () {
+    function ReferenceItem(title, year) {
+        this.title = title;
+        this.year = year;
+        // console.log('Creating a new reference item..');
+        // this.title = newTitle;
+        // this.year = newYear;
+    }
+    ReferenceItem.prototype.printItem = function () {
+        console.log(this.title + " was published in " + this.year);
+        console.log("Department: " + ReferenceItem.department);
+    };
+    Object.defineProperty(ReferenceItem.prototype, "publisher", {
+        get: function () {
+            return this._publisher;
+        },
+        set: function (newPublisher) {
+            this._publisher = newPublisher;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ReferenceItem.department = 'Reasearh';
+    return ReferenceItem;
+}());
+exports.ReferenceItem = ReferenceItem;
 //# sourceMappingURL=classes.js.map
